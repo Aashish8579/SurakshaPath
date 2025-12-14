@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SurakshaPath</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/heroicons/2.1.3/24/outline/heroicons.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.1"
+  }
+}
+</script>
+<style>
+    :root {
+        --bg-primary: #111827; 
+        --bg-secondary: #1f2937;
+        --bg-tertiary: #374151; 
+        --accent-primary: #4f46e5; 
+        --accent-secondary: #a5b4fc;
+        --text-primary: #f9fafb; 
+        --text-secondary: #9ca3af;
+        --border-color: #4b5563; 
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-primary);
+        background-image: radial-gradient(circle at top right, rgba(79, 70, 229, 0.15), transparent 30%);
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: var(--bg-secondary);
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: var(--bg-tertiary);
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--border-color);
+    }
+    
+    .leaflet-container {
+        height: 100%;
+        width: 100%;
+        border-radius: 0.5rem; 
+        background-color: var(--bg-tertiary);
+    }
+    .leaflet-control-attribution a {
+        color: var(--accent-secondary);
+    }
+    .leaflet-popup-content-wrapper {
+        background: var(--bg-secondary);
+        color: var(--text-primary);
+        border-radius: 8px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+    }
+    .leaflet-popup-content b {
+        color: var(--accent-secondary);
+    }
+    .leaflet-popup-tip {
+        background: var(--bg-secondary);
+    }
+
+    .leaflet-div-icon {
+        background: transparent;
+        border: none;
+    }
+    .map-icon {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color: white;
+        opacity: 0.9;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        transition: transform 0.2s ease;
+    }
+    .map-icon:hover {
+        transform: scale(1.1);
+    }
+    .map-icon svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .focus-glow:focus-within {
+        box-shadow: 0 0 0 2px var(--bg-primary), 0 0 0 4px var(--accent-primary);
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-5px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.3s ease-out forwards;
+    }
+</style>
+</head>
+<body class="bg-gray-900 text-white">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>

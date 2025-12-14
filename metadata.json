@@ -1,0 +1,9 @@
+{
+  "name": "AstraPath",
+  "description": "An intelligent route planning application that helps users find the safest routes across India, especially for women. It highlights areas with police presence, low crime rates, and also provides an option to view road damages like potholes for different modes of transport.",
+  "requestFramePermissions": [
+    "geolocation",
+    "microphone",
+    "camera"
+  ]
+}
